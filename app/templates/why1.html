@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>G.T. Club - 4.0</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+    <style type="text/css">
+      
+      #station_map { height: 400px;}
+
+    </style>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">G.T. Club - 4.0</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="static/img/profile.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#know">Your Grid</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <section id="know">
+          <div class="row">
+         <div class="col-md-1">
+        </div>
+            <div class="col-md-3">
+               <div class="my-auto">
+          <h1 class="mb-0"><br/>5171
+            <span class="text-primary">WD</span>
+            <br/><br/>
+          </h1>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div id="station_map"><br/><br/></div>
+      </div>
+        </div>
+         <div class="row" style="display: none;" name="btn_alert" id="btn_alert">
+            <button class="btn-warning"> You are almost there!! Invite neighbors to join to reach the discount limit </button>
+          </div>
+         <div class="row">
+         <div class="col-md-8">
+          <div id="myDiv"></div>
+        </div>
+
+         <div class="col-md-4">
+            <form id="Demo">
+              <div class="radio">
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <label><input type="radio" name="optionsRadios" value="none" checked> None </label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optionsRadios" value="gosolar"> Go Solar</label>
+              </div>
+              <div class="radio disabled">
+                <label><input type="radio" name="optionsRadios" value="ev" disabled> Drive EV</label>
+              </div>
+              <div class="radio disabled">
+                <label><input type="radio" name="optionsRadios" value="dms"> Be Sustainable in Consumption</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="row" id="financial" name="alert_invite" style="display:none;">
+          <h3>Module Types Available: </h3>
+        <table id="data_table_financials" class="table table-striped table-bordered" style="width:100%">
+          <thead>
+              <tr>
+                  <th>Item</th>
+                  <th>CIGS</th>
+                  <th>Monocrystalline Silicon (High efficiency)</th>
+                  <th>Heterojunction Silicon</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Initial Investment</td>
+                  <td>€1,539</td>
+                  <td>€3,582</td>
+                  <td>€3,392</td>
+              </tr>
+              <tr>
+                  <td>Return on Investment</td>
+                  <td>171.76%</td>
+                  <td>139.54%</td>
+                  <td>156.24%</td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="row" id="financial_labels" style="display: none;">
+          <form id="Demo1">
+             <div class="radio">
+                <label class="radio-inline"><input type="radio" name="optionsRadios1" value="cigs"> CIGS </label>
+              </div>
+              <div class="radio">
+                <label class="radio-inline"><input type="radio" name="optionsRadios1" value="mono"> Monocrystalline Silicon (High efficiency) </label>
+              </div>
+              <div class="radio">
+                <label class="radio-inline"><input type="radio" name="optionsRadios1" value="hetero"> Heterojunction Silicon </label>
+              </div>
+            </form>
+        </div>
+
+        <div class="row" id="financial_title" style="display: none;" align="center">
+          <h4>Vale of PV system over the system's lifetime</h4>       
+        </div>
+
+          <div class="row" id="financial_plot1" style="display: none;" align="center">
+             <img class="img img-responsive" src="static/img/cigs.jpg" height="500" width="500">
+          </div>
+
+          <div class="row" id="financial_plot2" style="display: none;" align="center">
+             <img class="img img-responsive" src="static/img/mono.jpg" height="500" width="500">
+          </div>
+
+          <div class="row" id="financial_plot3" style="display: none;" align="center">
+             <img class="img img-responsive" src="static/img/hetero.jpg" height="500" width="500">
+          </div>
+
+        <div class="row" id="dms" name="dms" style="display:none;">
+          <div class="col-md-3">
+            <h2>Demand Side Management</h2>
+            <p>Choose an appliance<br/></p>
+              <form id="Appliance_Select">
+             <div class="radio">
+                <label class="radio"><input type="radio" name="appl" value="app1"> Dish Washer </label>
+              </div>
+              <div class="radio">
+                <label class="radio"><input type="radio" name="appl" value="app2"> Washing Machine </label>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-9">
+            <div id="graph_li" style="display: none;"></div>
+            <div id="graph_li1" style="display: none;"></div>
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="static/js/resume.min.js"></script>
+
+    <script type="text/javascript">
+
+    function plot_graph_grid(){
+      var graphJSON_grid = {{graphJSON_grid | safe}};
+      Plotly.newPlot(myDiv,graphJSON_grid.data,graphJSON_grid.layout || {});
+      Plotly.deleteTraces('myDiv', 5);
+    }
+
+    </script>
+
+    <script type="text/javascript">
+      
+      $('#Demo').on('click', function () {
+
+        var val = $("input[name='optionsRadios']:checked").val();
+       
+        if(val=="gosolar"){
+          var graphJSON_grid = {{graphJSON_grid | safe}};
+          Plotly.newPlot(myDiv,graphJSON_grid.data,graphJSON_grid.layout || {});
+
+          $('#financial').show();
+          $('#financial_labels').show();
+          $('#btn_alert').show();
+          document.getElementById("dms").style.display = "none";
+
+      }
+
+      else if (val=="dms"){
+        plot_graph_grid();
+        document.getElementById("financial").style.display = "none";
+        document.getElementById("financial_labels").style.display = "none";
+        document.getElementById("financial_title").style.display = "none";
+        document.getElementById("financial_plot1").style.display = "none";
+        document.getElementById("financial_plot2").style.display = "none";
+        document.getElementById("financial_plot3").style.display = "none";
+
+        document.getElementById("btn_alert").style.display = "none";
+        $('#dms').show();
+      }
+
+      else if (val=="none"){
+        plot_graph_grid();
+        document.getElementById("financial").style.display = "none";
+        document.getElementById("financial_labels").style.display = "none";
+        document.getElementById("financial_title").style.display = "none";
+        document.getElementById("financial_plot1").style.display = "none";
+        document.getElementById("financial_plot2").style.display = "none";
+        document.getElementById("financial_plot3").style.display = "none";
+
+        document.getElementById("dms").style.display = "none";
+        document.getElementById("btn_alert").style.display = "none";
+        
+      }
+
+      });
+    </script>
+
+    <script type="text/javascript">
+    $('#Demo1').on('click', function () {
+
+        var val = $("input[name='optionsRadios1']:checked").val();
+
+        if(val=="cigs"){
+          $('#financial_title').show();
+          $('#financial_plot1').show();
+          $('#financial_plot2').hide();
+          $('#financial_plot3').hide();
+        }
+        else if(val=="mono"){
+          $('#financial_title').show();
+          $('#financial_plot2').show();
+           $('#financial_plot1').hide();
+          $('#financial_plot3').hide();
+
+        }
+        else if(val=="hetero"){
+          $('#financial_title').show();
+          $('#financial_plot3').show();
+           $('#financial_plot1').hide();
+          $('#financial_plot2').hide();
+        }
+
+      });
+    </script>
+
+<script type="text/javascript">
+      $(document).ready(function() {
+    $('#data_table_financials').DataTable();
+} );
+</script>
+
+<script type="text/javascript">
+
+  $('#Appliance_Select').on('click', function () {
+    var val = $("input[name='appl']:checked").val();
+
+    if(val=="app1"){
+      var graph_consumption = {{graph_li | safe}};
+      Plotly.newPlot(graph_li,graph_consumption.data,graph_consumption.layout || {});
+      $('#graph_li1').hide();
+      $('#graph_li').show();
+
+    }
+
+    else if(val=="app2"){
+      var graph_consumption1 = {{graph_li1 | safe}};
+      Plotly.newPlot(graph_li1,graph_consumption1.data,graph_consumption1.layout || {});
+      $('#graph_li').hide();
+      $('#graph_li1').show();
+    }
+
+  });
+  
+  
+</script>
+
+<script type="text/javascript">
+    L.mapbox.accessToken = 'pk.eyJ1IjoicGFydmF0aHlrayIsImEiOiJjamU1cDVxeWYyZDQwMzJtdXB2cTVjeXNjIn0.oYS7Hs60YX_Zlmvf_Zcemg';
+    var station_map = L.mapbox.map('station_map', 'mapbox.streets').setView([51.4416,5.50], 17);
+
+      var circle = L.marker([51.4416,5.501], {
+        "properties": {
+            'marker-color': 'red'
+          }
+        }).addTo(station_map)
+
+       circle.valueOf()._icon.style.Color = 'green';
+
+            var circle = L.marker([51.4416,5.502], {
+        "properties": {
+            'marker-color': 'red'
+          }
+        }).addTo(station_map)
+
+      var circle = L.marker([51.4416,5.501], {
+        "properties": {
+            'marker-color': 'red'
+          }
+        }).addTo(station_map)
+
+      var circle = L.marker([51.4416,5.503], {
+        "properties": {
+            'marker-color': 'red'
+          }
+        }).addTo(station_map)
+
+
+</script>
+
+  </body>
+
+</html>

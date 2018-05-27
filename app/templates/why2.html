@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>G.T. Club - 4.0</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/vendor/devicons/css/devicons.min.css" rel="stylesheet">
+  <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/resume.min.css" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="static/js/resume.min.js"></script>
+
+  <style type="text/css">
+  .holder { 
+    padding:10px;
+  }
+  .holder .mask {
+    position: relative;
+    left: 0px;
+    top: 30px;
+    width:300px;
+    height:400px;
+    overflow: hidden;
+  }
+  .holder ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    position: relative;
+  }
+  .holder ul li {
+    padding:10px 0px;
+  }
+  .holder ul li a {
+    color:darkred;
+    text-decoration:none;
+  }
+</style>
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">G.T. Club - 4.0</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="static/img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/why1">Your Grid!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#know">Why to go green!</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-9">
+        <br/><br/><br/>
+        <h3>NETHERLANDS LAGGING BEHIND MOST EU COUNTRIES ON RENEWABLE ENERGY<br/>
+         Netherlands Moves To Only Allow EV Sales By 2025 – End Of Gas, Petrol</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="myDiv"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="holder">
+          <ul id="ticker01">
+            <li><span>13 May 2016</span><a href="https://www.iamexpat.nl/expat-info/dutch-expat-news/city-air-pollution-netherlands-exceeds-eu-limits#" target="_blank"> City air pollution in the Netherlands exceeds EU limits</a></li>
+            <li><span>07 Sep 2017</span><a href="https://euobserver.com/environment/138934" target="_blank"> Netherlands latest EU country to be told to improve air quality </a></li>
+            <li><span>30 March 2016</span><a href="https://insideevs.com/netherlands-moves-to-allow-only-all-evs-by-2025-no-more-gas-diesel-sales/" target="_blank"> Netherlands Moves To Only Allow EV Sales By 2025 – End Of Gas, Petrol </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    var trace1 = {
+      x: ['EU', 'NL', 'Germany'],
+      y: [20, 14, 23],
+      name: '2016',
+      type: 'bar'
+    };
+
+    var trace2 = {
+      x: ['EU', 'NL', 'Germany'],
+      y: [12, 18, 29],
+      name: 'Target 2020',
+      type: 'bar'
+    };
+
+    var data = [trace1, trace2];
+
+    var layout = {
+      showlegend: true,
+      barmode : 'stacked'
+    };
+
+    Plotly.newPlot('myDiv', data, layout);
+  </script>
+
+
+  <script type="text/javascript">
+    jQuery.fn.liScroll = function(settings) {
+      settings = jQuery.extend({
+        travelocity: 0.03
+      }, settings);   
+      return this.each(function(){
+        var $strip = jQuery(this);
+        $strip.addClass("newsticker")
+        var stripHeight = 1;
+        $strip.find("li").each(function(i){
+          stripHeight += jQuery(this, i).outerHeight(true); // thanks to Michael Haszprunar and Fabien Volpi
+        });
+        var $mask = $strip.wrap("<div class='mask'></div>");
+        var $tickercontainer = $strip.parent().wrap("<div class='tickercontainer'></div>");               
+        var containerHeight = $strip.parent().parent().height();  //a.k.a. 'mask' width   
+        $strip.height(stripHeight);     
+        var totalTravel = stripHeight;
+        var defTiming = totalTravel/settings.travelocity; // thanks to Scott Waye   
+        function scrollnews(spazio, tempo){
+          $strip.animate({top: '-='+ spazio}, tempo, "linear", function(){$strip.css("top", containerHeight); scrollnews(totalTravel, defTiming);});
+        }
+        scrollnews(totalTravel, defTiming);       
+        $strip.hover(function(){
+          jQuery(this).stop();
+        },
+        function(){
+          var offset = jQuery(this).offset();
+          var residualSpace = offset.top + stripHeight;
+          var residualTime = residualSpace/settings.travelocity;
+          scrollnews(residualSpace, residualTime);
+        });     
+      }); 
+    };
+
+    $(function(){
+      $("ul#ticker01").liScroll();
+    });
+  </script>
+
+</body>
+
+</html>
